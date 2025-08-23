@@ -1,0 +1,13 @@
+# dataset
+data/dataset/*
+data/clean_review/API/*
+
+# model checkpoints
+attack/adv_reviewer/transformations/utils/style/inverseStyleTransfer/* 
+utils/ReviewAdvisor_modified/tagger/seqlab_final/pytorch_model.bin
+
+# pycache
+__pycache__/
+*.py[cod]
+
+
