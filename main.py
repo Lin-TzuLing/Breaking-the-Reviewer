@@ -36,22 +36,26 @@ def get_params():
 
     # Dataset
     parser.add_argument(
-        "--dataset_name", type=str, default="iclr_2017", help="Name of the dataset."
+        "--dataset_name",
+        type=str,
+        default="iclr_2017",
+        help="Name of the dataset.",
+        # "iclr" for AgentReview
     )
-    # "iclr" for AgentReview
     parser.add_argument(
         "--dataset_dir",
         type=str,
         default="data/dataset/PeerRead/data/iclr_2017",
         help="Directory containing the dataset.",
+        # "data/dataset/AgentReview" for AgentReview
     )
-    # "data/dataset/AgentReview" for AgentReview
     parser.add_argument(
         "--dataset_mode",
         type=str,
         default="all",
         choices=["all", "train", "dev", "test"],
         help="Mode of the dataset.",
+        # ["all", "ICLR_2020", "ICLR_2021", "ICLR_2022", "ICLR_2023"] for AgentReview
     )
     parser.add_argument(
         "--manual_review_root",
@@ -60,17 +64,24 @@ def get_params():
     )
 
     # Data
-    parser.add_argument("--input_metainfo", nargs="+", default=["paper_id"])
     parser.add_argument(
-        "--input_contents", nargs="+", default=[], help="Input content for each paper."
+        "--input_metainfo",
+        nargs="+",
+        default=["paper_id"],
+        help="meta information to be included",
+    )
+    parser.add_argument(
+        "--input_contents",
+        nargs="+",
+        default=[],
+        help="Input content for each paper (to be reviewed).",
     )
     parser.add_argument(
         "--modifiable_contents",
         nargs="+",
         default=["lcs"],
-        help="Content that are modifiable (inject attack patterns into) for each paper.",
+        help="Contents (or sections) that are modifiable (inject attack patterns into) for each paper.",
     )
-
     parser.add_argument(
         "--aspect_score_types",
         nargs="+",
@@ -86,7 +97,6 @@ def get_params():
         ],
         help="Aspect for generating score.",
     )
-
     parser.add_argument(
         "--aspect_tag_types",
         nargs="+",
@@ -113,9 +123,7 @@ def get_params():
     parser.add_argument(
         "--data_label_type", type=str, default="avg", choices=["avg", "most_feq"]
     )
-    parser.add_argument(
-        "--port", type=int, default=8091, choices=[8091, 8092, 8093, 8094]
-    )
+    parser.add_argument("--port", type=int, default=8091, choices=[8091, 8092])
 
     # Model
     parser.add_argument(
@@ -142,9 +150,7 @@ def get_params():
             "PuncAttack",
             "TextFooler",
             "BertAttack",
-            "Checklist",
             "StyleAdv",
-            "SyntacticAdv",
         ],
         help="Adversarial attack to use",
     )
