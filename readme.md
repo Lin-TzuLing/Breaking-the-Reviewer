@@ -120,3 +120,6 @@ python main.py --attack Styleadv \
 - **TextFooler**: Synonym replacement attacks
 - **BertAttack**: BERT-based adversarial examples
 - **Styleadv**: Style-based adversarial attacks
+
+## Contact
+> tzulinglin.11@nycu.edu.tw
