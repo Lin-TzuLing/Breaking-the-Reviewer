@@ -7,8 +7,6 @@
 
 This repository contains the implementation for our paper that investigates the vulnerability of Large Language Models (LLMs) in automated peer review systems when subjected to textual adversarial attacks.
 
-> **Note**: This repository is under active development and will be updated continuously.
-
 ## Reference Repositories
 
 This project builds upon the following repositories:
